@@ -7,15 +7,14 @@
 
 /* TEMA DARK */
  :root[data-theme='dark'] {
-  --texto-color: #f0f0f0;  /cor principal Textos/
-  --background-color: #1a2a22;  /cor principal Fundo/
- 
+  --texto-color: #f8faf9;  /*cor principal Textos4*/
+  background-color: #1a2a22; 
   /* bg = background == cor do Fundo */
   --secondary-bg-color: #ffffff;  
   --primary-border-color: #ffffff;
   --secondary-border-color: #0b6d13;
   --title-color: #F0F0F0;
-  --link-color: #f8fbca;
+  --link-color: #f8aca;
   --link-hover: #f8fbca;;
   --icon-color: #C7C8C9;
 }
@@ -72,6 +71,7 @@ h6 {
   font-family: var(--texto-color);
   
 }
+
 .dignevirtue h1{
 text-align: center;
 color: var(--link-hover);
@@ -494,8 +494,7 @@ color: var(--link-color);  padding-top: 50px;
 }
 
 /*--------------------------------------------------------------
-# Preloader
---------------------------------------------------------------*/
+# Preloader--------------------------------------------------------------*/
 #preloader {
   position: fixed;
   inset: 0;
@@ -705,7 +704,6 @@ section,
     scroll-margin-top: 66px;
   }
 }
-
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
@@ -1046,7 +1044,8 @@ padding-right: 90px;
 }
 
 /*--------------------------------------------------------------
-# About Section--------------------------------------------------------------*/
+# About Section
+--------------------------------------------------------------*/
 .about .section-title {
   margin-bottom: 60px;
 }
@@ -1378,7 +1377,6 @@ color: #f8fbca;
 .atua-saude h2{
   padding-top: 1.5px;
 }
-
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
@@ -1787,4 +1785,3 @@ color: #f8fbca;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
-
