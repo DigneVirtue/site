@@ -71,20 +71,54 @@ h6 {
   font-family: var(--texto-color);
   
 }
+.dignevirtue h1 {
+  text-align: center;
+  color: var(--link-hover);
+}
 
-.dignevirtue h1{
-text-align: center;
-color: var(--link-hover);
+.dignevirtue p {
+  font-size: 20px;
+  width: 70rem;
+  text-align: center;
+  margin-left: 100px;
+  padding-bottom: 10rem;
+  padding-top: 5rem;
+  color: var(--texto-color);
 }
-.dignevirtue p{
-font-size: 20px;
-width: 70rem;
-text-align: center;
-margin-left: 100px;
-padding-bottom: 10rem;
-padding-top: 5rem;
-color: var(--texto-color);
+
+/* Media Queries para tornar a seção responsiva */
+
+@media (max-width: 1024px) {
+  /* Para telas menores que 1024px (tablets) */
+  .dignevirtue p {
+    width: 90%; /* Ajuste a largura para usar mais espaço disponível */
+    margin-left: auto; /* Centraliza o parágrafo */
+    margin-right: auto; /* Centraliza o parágrafo */
+    padding-top: 4rem; /* Menos espaçamento no topo */
+    padding-bottom: 6rem; /* Menos espaçamento no rodapé */
+  }
 }
+
+@media (max-width: 768px) {
+  /* Para telas menores que 768px (smartphones em modo paisagem e pequenos) */
+  .dignevirtue p {
+    width: 90%; /* Largura otimizada */
+    font-size: 18px; /* Reduz o tamanho da fonte para melhor leitura */
+    padding-top: 3rem; /* Ajuste no espaçamento do topo */
+    padding-bottom: 4rem; /* Ajuste no espaçamento inferior */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Para telas menores que 480px (smartphones em modo retrato) */
+  .dignevirtue p {
+    width: 90%; /* Largura otimizada */
+    font-size: 16px; /* Tamanho de fonte ainda menor para caber em telas pequenas */
+    padding-top: 2rem; /* Menos espaçamento no topo */
+    padding-bottom: 3rem; /* Menos espaçamento no rodapé */
+  }
+}
+
 
 html[data-theme='light'] .logo {
   filter: invert(1);
@@ -92,52 +126,109 @@ html[data-theme='light'] .logo {
 
 span{
   color: var(--link-color);
-}
-
-.educacao {
+}.educacao {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-}
-.tema{ 
-  color: var(--link-color);
+  flex-wrap: wrap; /* Permite reorganização em telas menores */
 }
 
 .educacao img {
-  max-width: 25rem;
-  
-
- 
+  max-width: 100%; /* Garante que a imagem seja responsiva */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-right: 20px; /* Espaço entre a imagem e o texto */
+  max-width: 25rem; /* Limita a largura da imagem no desktop */
 }
-
-
 
 .educacao .texto {
-  font-size: 20px;
-  width: 30rem;
-  height: 20rem;
+  font-size: 1rem;
+  max-width: 100%;
 }
 
+@media (min-width: 769px) {
+  .educacao {
+    flex-direction: row; /* Mantém imagem e texto lado a lado no desktop */
+  }
+
+  .educacao img {
+    margin-right: 20px; /* Espaço entre a imagem e o texto no desktop */
+  }
+
+  .educacao .texto {
+    max-width: 30rem; /* Limita a largura do texto no desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  .educacao {
+    flex-direction: column; /* Empilha imagem e texto em telas menores */
+    text-align: center; /* Centraliza o texto em telas menores */
+  }
+
+  .educacao .texto p {
+    font-size: 15px; /* Ajusta o tamanho do texto em telas menores */
+  }
+}
+
+/* Seção Fome */
 .fome {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 20px;
-}
-.tema{
-  color: var(--link-color);
+  flex-wrap: nowrap; /* Mantém a imagem e o texto lado a lado no desktop */
 }
 
 .fome img {
-  max-width: 25rem;
- 
+  width: 30%; /* Largura da imagem no desktop */
+  max-width: 100%; /* Responsivo: imagem não ultrapassa o container */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-right: 15rem; /* Espaço entre imagem e texto */
 }
 
+.texto-container {
+  max-width: 60%; /* Limita a largura do bloco de texto */
+}
 
+.texto-container h1 {
+padding-right: 10px;
+  color: #f8fbca;
+  font-size: 2rem;
+  margin-bottom: 10px; /* Espaço entre o título e o parágrafo */
+}
 
-.fome .texto {
-  font-size: 10px;
+.texto-container p {
+  font-size: 1rem; /* Tamanho do texto no desktop */
+  max-width: 100%;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .fome {
+    flex-direction: column; /* Empilha imagem, título e texto em telas menores */
+    text-align: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza os elementos */
+  }
+
+  .fome img {
+    width: 70%; /* Aumenta a largura da imagem em telas menores */
+    margin-right: 0; /* Remove o espaçamento lateral */
+    margin-bottom: 20px; /* Espaço entre imagem e texto em telas menores */
+  }
+
+  .texto-container {
+    max-width: 100%; /* Permite que o texto ocupe toda a largura */
+  }
+
+  .texto-container h1 {
+    font-size: 1.5rem; /* Ajusta o tamanho do título em telas menores */
+    text-align: center; /* Centraliza o título */
+  }
+
+  .texto-container p {
+    font-size: 0.9rem; /* Ajusta o tamanho do texto em telas menores */
+  }
 }
 
 .about-3 .mb-4{
@@ -1097,6 +1188,8 @@ padding-right: 90px;
   margin-bottom: 30px;
 }
 
+
+
 .about-3 .btn-cta {
   text-transform: uppercase;
   font-size: 14px;
@@ -1156,6 +1249,7 @@ padding-right: 90px;
   font-size: 30px;
  text-align: center;
  margin-top: 10rem;
+ color: #f8faca;
 }
 .areas-about p{
  font-size: 20px;
@@ -1188,34 +1282,67 @@ color: white;
 }
 
 
-/* saude*/
+/* Seção Saúde */
+.saude {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  flex-wrap: nowrap; /* Mantém o layout lado a lado no desktop */
+}
 
- /* saude*/
+.texto-container {
+  max-width: 60%; /* Limita a largura do bloco de texto */
+}
 
- .saude img{
-  
-  width: 30%;
-  float: right;
-  
-  
- }
- .saude h1{
-text-align: left;
-margin-left: 15%;
-color: #f8fbca;
+.texto-container h1 {
+  padding-left: 25px;
+  color: #f8fbca;
+  font-size: 2rem;
+  margin-bottom: 10px; /* Espaço entre o título e o parágrafo */
+}
 
- }
- .saude h2 p{
-  float: left;
-  
- 
-  
- }
- .saude p{
- font-size: 20px;
- width: 30rem;
- height: 20rem;
- }
+.texto-container p {
+  font-size: 20px; /* Tamanho do texto no desktop */
+  max-width: 100%;
+}
+
+.saude img {
+  width: 40%; /* Largura da imagem no desktop */
+  max-width: 100%; /* Responsivo: imagem não ultrapassa o container */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-left: 15rem; /* Espaço entre o texto e a imagem */
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .saude {
+    flex-direction: column; /* Empilha imagem, título e texto em telas menores */
+    text-align: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza os elementos */
+  }
+
+  .texto-container {
+    max-width: 100%; /* Permite que o texto ocupe toda a largura */
+  }
+
+  .saude img {
+    width: 70%; /* Aumenta a largura da imagem em telas menores */
+    margin-left: 0; /* Remove o espaçamento lateral */
+    margin-bottom: 20px; /* Espaço entre imagem e texto em telas menores */
+  }
+
+  .texto-container h1 {
+    font-size: 1.5rem; /* Ajusta o tamanho do título em telas menores */
+    text-align: center; /* Centraliza o título */
+  }
+
+  .texto-container p {
+    font-size: 15px; /* Ajusta o tamanho do texto em telas menores */
+  }
+}
+
+
 /* onde a saude atua*/
 .atua-saude {
   float: left;
@@ -1243,6 +1370,7 @@ color: #f8fbca;
 
 .team .person img {
   transition: 0.3s all ease;
+
 }
 
 .team .person .person-contents {
