@@ -63,44 +63,42 @@
     <i id="toggle-theme" class="bi bi-moon-stars" style="font-size: 20px; cursor: pointer; padding: 40px;"></i>
 
   </header>
-  <div class="doacao-container">
-    <h2>Contribua com a Dignevirtue</h2>
-    <p>Faça parte da nossa missão para um futuro mais inclusivo e sustentável. Toda doação conta!</p>
-    <button class="doar-btn" onclick="openModal()">Doar Agora</button>
-
-    <div id="doacao-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3>Escolha o valor da sua doação</h3>
-            <div class="valores-doacao">
-                <button onclick="selecionarValor(10)">R$10</button>
-                <button onclick="selecionarValor(50)">R$50</button>
-                <button onclick="selecionarValor(100)">R$100</button>
-                <button onclick="selecionarValor(500)">R$500</button>
-            </div>
-            <input type="number" id="valor-doacao" placeholder="Outro valor" />
-            <button class="confirmar-btn" onclick="confirmarDoacao()">Confirmar Doação</button>
-        </div>
-    </div>
-</div>
+ 
   <main class="main">
 
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/doação\ imagem.webp);">
-      <div class="container position-relative">
-        <h1>Doação</h1>
-        
-      </div>
+      
     </div><!-- End Page Title -->
        
     <div class="container section-title" data-aos="fade-up">
       <div class="educacao">
-        <img src="assets/img/doação-canva2.png" alt="Imagem de exemplo">
+        <img src="assets/img/doação.png" alt="Imagem de exemplo">
         <div class="texto">
           <h1 class="tema"> Criação de Sites e Aplicações para Causas Sociais</h1>
           <p>Na Dignevirtue, estamos comprometidos com o desenvolvimento de soluções digitais que promovam inclusão, sustentabilidade e acesso à educação. Sua doação nos ajuda a ampliar projetos que fazem a diferença na vida de muitas pessoas, proporcionando tecnologia acessível e conhecimento para comunidades que mais precisam. Juntos, podemos criar um futuro mais justo e conectado.</div><!-- End Section Title -->
     </div>
-              
+    <div class="doacao-container">
+      <h2>Contribua com a Dignevirtue</h2>
+      <p>Faça parte da nossa missão para um futuro mais inclusivo e sustentável. Toda doação conta!</p>
+      <button class="doar-btn" onclick="openModal()">Doar Agora</button>
+  
+      <div id="doacao-modal" class="modal">
+          <div class="modal-content">
+              <span class="close-btn" onclick="closeModal()">&times;</span>
+              <h3>Escolha o valor da sua doação</h3>
+              <div class="valores-doacao">
+                  <button onclick="selecionarValor(10)">R$10</button>
+                  <button onclick="selecionarValor(50)">R$50</button>
+                  <button onclick="selecionarValor(100)">R$100</button>
+                  <button onclick="selecionarValor(500)">R$500</button>
+              </div>
+              <input type="number" id="valor-doacao" placeholder="Outro valor" />
+              <button class="confirmar-btn" onclick="confirmarDoacao()">Confirmar Doação</button>
+          </div>
+      </div>
+  </div>
+  
   </main>
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
