@@ -14,7 +14,7 @@
   --primary-border-color: #ffffff;
   --secondary-border-color: #0e0000;
   --title-color: #F0F0F0;
-  --link-color: #f8faca;
+  --link-color: #6abb5a;
   --link-hover: #f8fbca;;
   --icon-color: #C7C8C9;
 }
@@ -22,7 +22,7 @@
 :root[data-theme='light'] {
   --primary-color: #04291b; /* cor principal textos */
   background-color: #ffffffe7;
-  --texto-color: #2d442d;
+  --texto-color: #111311;
   --primary-bg-color: #eff7ed;
   --secondary-bg-color: #dbebd9;
   --primary-border-color: #609163;
@@ -33,6 +33,7 @@
 --icon-color: #010716;
 
 }
+
 
 
 
@@ -127,21 +128,14 @@ html[data-theme='light'] .logo {
 
 span{
   color: var(--primary-bg-color);
-}.educacao {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  flex-wrap: wrap; /* Permite reorganização em telas menores */
 }
-
 .educacao img {
   max-width: 100%; /* Garante que a imagem seja responsiva */
   height: auto; /* Mantém a proporção da imagem */
-  margin-right: 20px; /* Espaço entre a imagem e o texto */
+  margin-right: 20px; /* Espaço entre a imagem e o texto no desktop */
   max-width: 25rem; /* Limita a largura da imagem no desktop */
- 
 }
+
 .tema {
   color: var(--link-color);
 }
@@ -153,11 +147,12 @@ span{
 
 @media (min-width: 769px) {
   .educacao {
+    display: flex;
     flex-direction: row; /* Mantém imagem e texto lado a lado no desktop */
   }
 
   .educacao img {
-    margin-right: 20px; /* Espaço entre a imagem e o texto no desktop */
+    margin-right: 200px; /* Espaço entre a imagem e o texto no desktop */
   }
 
   .educacao .texto {
@@ -167,14 +162,28 @@ span{
 
 @media (max-width: 768px) {
   .educacao {
+    display: flex;
     flex-direction: column; /* Empilha imagem e texto em telas menores */
-    text-align: center; /* Centraliza o texto em telas menores */
+    align-items: center; /* Centraliza os elementos no eixo transversal */
+    text-align: center; /* Centraliza o texto */
+    gap: 15px; /* Espaço entre a imagem e o texto */
+  }
+
+  .educacao img {
+    max-width: 100%; /* Garante que a imagem seja responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 0 auto 15px auto; /* Centraliza a imagem e adiciona espaço abaixo */
+  }
+
+  .educacao .texto {
+    max-width: 90%; /* Ajusta a largura do texto em telas menores */
   }
 
   .educacao .texto p {
     font-size: 15px; /* Ajusta o tamanho do texto em telas menores */
+    padding: 0; /* Remove padding lateral */
+    margin: 0; /* Remove margens desnecessárias */
   }
-
 }
 
 /* Seção Fome */
@@ -239,7 +248,7 @@ padding-right: 10px;
 }
 /* Estilo padrão */
 .about-3 .mb-4 {
-  color: #ffffff;
+  color: var();
   font-size: 20px;
 }
 
@@ -353,7 +362,7 @@ padding-right: 10px;
 }
 
 .header .logo img {
-  max-height: 32px;
+  max-height: 60px;
   margin-right: 8px;
 }
 
@@ -814,20 +823,33 @@ color: #000000;
 --------------------------------------------------------------*/
 section,
 .section {
-  color: var(--link-color);
   background-color: var(--background-color);
   padding: 60px 0;
   scroll-margin-top: 100px;
   overflow: clip;
 }
 
-@media (max-width: 1199px) {
+/* Estilo para o título h1 */
+section,
+.section h1 {
+  color: var(--link-color);
+  text-align: center; /* Centraliza o título no desktop */
+}
 
+/* Estilo para os parágrafos */
+section,
+.section p {
+  color: var(--texto-color);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1199px) {
   section,
   .section {
     scroll-margin-top: 66px;
   }
 }
+
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
@@ -838,7 +860,7 @@ section,
 }
 
 .section-title h2 {
-  font-size: 28px;
+  font-size: 28px; /* Mantém o tamanho no desktop */
   font-weight: 500;
   margin-bottom: 15px;
 }
@@ -846,108 +868,178 @@ section,
 .section-title p {
   margin-bottom: 0;
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 20px; /* Mantém o tamanho no desktop */
   color: var(--texto-color);
-}
-
-
-/* Título do gráfico */
-#chart-section h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #f8faba;
-}
-
-
-/* Estilo do container do gráfico */
-.graph-section {
-  margin-top: 50px;
-  text-align: center;
-}
-
-/* Título e descrição */
-.graph-section h2 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #f8fbca;
-}
-
-.graph-section p {
-  font-size: 18px;
-  color: #ffffff;
-  margin-bottom: 30px;
-}
-
-/* Layout de conteúdo do gráfico e imagem */
-.graph-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.progress-container {
-  width: 60%; /* Define a largura do gráfico */
-}
-
-.progress-bar-container {
-  margin-bottom: 20px;
-}
-
-.progress-bar {
-  position: relative;
-  height: 30px;
-  background-color: #f8fbca;
-  text-align: center;
-  overflow: hidden;
-  width: 0%; /* Começa com 0% */
-  border-radius: 20px;
-  transition: width 2s ease-out; /* Transição suave para o crescimento da barra */
-}
-
-.progress-bar .label {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgb(18, 68, 31);
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.progress-bar .percentage {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgb(19, 54, 23);
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.image-container img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  object-fit: contain;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .graph-content {
-    flex-direction: column;
+  .section-title h2 {
+    font-size: 22px; /* Reduz o tamanho do título em telas menores */
   }
-  .progress-container {
-    width: 100%;
-  }
-  .image-container img {
-    max-width: 100%;
-    margin-top: 20px;
-  }
-  .graph-section p{
-    font-size: 15px;
+
+  .section-title p {
+    font-size: 16px; /* Reduz o tamanho do texto em telas menores */
   }
 }
+
+@media (max-width: 480px) {
+  .section-title h2 {
+    font-size: 20px; /* Ajuste adicional para telas muito pequenas */
+  }
+
+  .section-title p {
+    font-size: 14px; /* Ajuste adicional para o texto */
+  }
+}
+
+/* Estilos gerais */
+#grafico-section {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: #bada55;
+  text-align: center;
+}
+
+#texto-explicativo {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #e7e9dd;
+  padding: 0 15%;
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Título e descrição no desktop */
+.graph-section h2 {
+  color: var(--link-color);
+  padding-left: 0; /* Remove o espaçamento à esquerda */
+  text-align: center; /* Centraliza o título */
+  font-size: 2rem; /* Certifique-se de que está proporcional */
+}
+
+.graph-section p {
+  color: var(--texto-color);
+  font-size: 1.2rem; /* Proporcional para desktop */
+  margin: 1rem 0;
+  text-align: center; /* Centraliza o parágrafo */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .graph-section h2 {
+    font-size: 1.8rem; /* Reduz o tamanho da fonte para telas menores */
+  }
+
+  .graph-section p {
+    font-size: 14px; /* Reduz o tamanho do texto */
+    padding: 0 1rem; /* Adiciona espaço interno nas laterais */
+    text-align: justify; /* Mantém o alinhamento legível */
+  }
+}
+
+#grafico-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os elementos se ajustem em telas pequenas */
+  align-items: center;
+  justify-content: center; /* Centraliza os elementos no container */
+  gap: 30px;
+  margin-top: 20px;
+}
+
+#imagem-container {
+  width: 30%;
+}
+
+#imagem-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Gráfico com barras horizontais */
+#grafico {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente as barras no container */
+}
+
+.grafico-barra {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 15px;
+  background-color: #e7e9dd;
+  border-radius: 15px;
+}
+
+.barra {
+  width: 0%;
+  background-color: var(--link-color);
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  transition: width 1s ease-out;
+}
+
+.area-texto {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--texto-color);
+  font-weight: bold;
+}
+
+.porcentagem {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #010e02;
+  font-weight: bold;
+}
+
+#porcentagens {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.porcentagem p {
+  font-size: 1.1rem;
+  color: #474b34;
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  #grafico-container {
+    flex-direction: column;
+    align-items: center; /* Garante a centralização em telas pequenas */
+  }
+
+  #imagem-container {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  #grafico {
+    width: 80%;
+  }
+
+  #texto-explicativo {
+    font-size: 1rem;
+    padding: 0 10%;
+  }
+
+  .porcentagem p {
+    font-size: 1rem;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -1216,12 +1308,14 @@ padding-right: 90px;
 }
 
 .about-3 .content-title {
-  color: var(--accent-color);
+  color: var(--link-color);
   margin-bottom: 30px;
-  font-weight: 300;
+font-size: 20px;
   text-align: left;
 }
-
+.about-3 h1{
+  font-size: 20rem;
+}
 .about-3 p {
   color: var(--texto-color);
 }
@@ -1351,7 +1445,7 @@ padding-right: 90px;
 .about-img-container p {
   max-width: 45%; /* Limita o texto a 45% do container no desktop */
   font-size: 20px;
-  color: white;
+  color: var(--texto-color);
   line-height: 1.6;
   padding-right: 10%;
 }
@@ -1398,6 +1492,7 @@ padding-right: 90px;
 
   .about-img-container p {
     font-size: 14px; /* Texto menor para telas pequenas */
+    padding-left: 10px;
   }
 }
 
@@ -1413,14 +1508,14 @@ padding-right: 90px;
   font-size: 30px;
   text-align: center;
   margin-top: 10rem;
-  color: #f8faca;
+  color: var(--link-color);
 }
 
 .areas-about p {
   font-size: 20px;
   text-align: center;
   margin-top: 30px;
-  color: white;
+  color: var(--texto-color);
 }
 
 /* Responsividade para telas menores */
@@ -1466,6 +1561,7 @@ padding-right: 90px;
 .area h3 {
   font-size: 18px;
   margin: 10px 0;
+  color: var(--link-color);
 }
 
 .area p {
@@ -1553,6 +1649,7 @@ padding-right: 90px;
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
+/* Estilos gerais */
 .team .person {
   position: relative;
   display: flex;
@@ -1574,9 +1671,11 @@ padding-right: 90px;
   max-width: 100%; /* Garante que a imagem se ajuste ao tamanho do container */
   height: auto; /* Mantém a proporção da imagem */
 }
-.team .section-title h2{
-  color: #f8fbca;
+
+.team .section-title h2 {
+  color: var(--link-color);
 }
+
 .team .content {
   display: flex;
   justify-content: center;
@@ -1590,14 +1689,14 @@ padding-right: 90px;
 }
 
 /* /nomes da equipe/ */
-.team .person .person-contents h3 {   
+.team .person .person-contents h3 {
   color: var(--texto-color);
   font-size: 25px;
 }
 
 /*nomes do cargo */
 .team .person .person-contents .position {
-  color: var(--title-color);
+  color: var(--texto-color);
 }
 
 /* icones das redes sociais */
@@ -1608,37 +1707,7 @@ padding-right: 90px;
   z-index: 2;
 }
 
-/* Responsividade */
-@media (max-width: 1024px) {
-  .team .content {
-    padding-left: 2rem; /* Menor distância no tablet */
-  }
-}
-
-@media (max-width: 768px) {
-  .team .content {
-    padding-left: 0; /* Remove o padding em telas menores */
-    justify-content: center; /* Garante que as imagens fiquem centralizadas */
-  }
-
-  .team .person {
-    width: 100%; /* Faz com que cada pessoa ocupe a largura inteira */
-    margin-bottom: 20px; /* Dá mais espaço entre os itens */
-  }
-
-  .team .person img {
-    max-width: 80%; /* Ajusta a largura das imagens no mobile */
-    margin: 0 auto; /* Centraliza a imagem */
-  }
-}
-.section-header h1{
-  text-align: center;
-  color: #f8faba;
-}
-.section-header p{
-text-align: center;
-}
-/* Centralização dos Cards */
+/* Cards de serviços */
 .service-cards {
   display: flex;
   flex-direction: column;
@@ -1661,7 +1730,6 @@ text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombras para destacar o card */
   transition: transform 0.3s ease;
   margin-bottom: 30px; /* Espaço entre os cards */
-  justify-content: center;
 }
 
 .service-card:hover {
@@ -1696,60 +1764,89 @@ text-align: center;
   color: #555;
 }
 
-/* Responsividade */
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
-  .section-header h1 {
-    font-size: 1.8rem;
+  /* Centraliza a seção de equipe */
+  .team .content {
+    padding-left: 0; /* Remove o padding no mobile */
+    justify-content: center; /* Centraliza os elementos */
+    flex-wrap: wrap; /* Permite que os itens fiquem em blocos */
   }
 
-  .section-header p {
-    font-size: 0.9rem;
+  .team .person {
+    width: 90%; /* Cada pessoa ocupa 90% da largura */
+    margin: 10px auto; /* Centraliza os itens */
   }
 
+  .team .person img {
+    max-width: 100%; /* Ajusta a largura da imagem */
+    margin: 0 auto;
+  }
+
+  .team .person .person-contents {
+    text-align: center; /* Centraliza o texto */
+  }
+
+  /* Cards de serviços */
+.service-card {
+  display: flex;
+  flex-direction: column; /* Empilha imagem e texto verticalmente */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  justify-content: center; /* Centraliza verticalmente no espaço disponível */
+  width: 90%; /* Ocupa 90% da largura no desktop */
+  margin: 10px auto; /* Centraliza os cards no container */
+}
+
+/* Ajuste para desktop */
+@media (min-width: 769px) {
   .service-cards {
-    padding: 10px;
+    display: flex;
+    justify-content: center; /* Centraliza os cards no container */
+    gap: 20px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite múltiplas linhas, se necessário */
   }
 
   .service-card {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Mantém a estrutura dos cards */
+    align-items: center; /* Garante alinhamento central no desktop */
+    width: 30%; /* Define a largura dos cards para ocupar espaço proporcional */
+  }
+}
+
+/* Responsividade para tablets e dispositivos menores */
+@media (max-width: 768px) {
+  .service-card {
+    width: 90%; /* Cada card ocupa 90% da largura */
+    margin: 10px auto; /* Centraliza os cards no container */
   }
 
   .image-container,
   .text-container {
-    width: 100%;
+    width: 100%; /* Cada item ocupa a largura total */
+    text-align: center; /* Centraliza o texto */
   }
 
   .text-container h2 {
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* Ajusta o tamanho do título */
   }
 
   .text-container p {
-    font-size: 0.9rem;
+    font-size: 1rem; /* Ajusta o tamanho do texto */
   }
 }
 
+/* Responsividade para telas muito pequenas (mobile) */
 @media (max-width: 480px) {
-  .section-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .section-header p {
-    font-size: 0.8rem;
+  .service-card {
+    width: 100%; /* Cada card ocupa a largura total */
+    margin: 10px auto;
   }
 
   .text-container h2 {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Ajusta o tamanho do título */
   }
 
   .text-container p {
-    font-size: 0.85rem;
+    font-size: 0.9rem; /* Ajusta o tamanho do texto */
   }
-  .section-title p{
-    font-size: 15px;
-  }
-}
-.section-title h1{
-  color: #f8faba;
 }
