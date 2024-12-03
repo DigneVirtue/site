@@ -1,0 +1,1919 @@
+/* Fonts */
+:root {
+  --default-font: "Open Sans",  system-ui, -apple-system, "Seoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Marcellus",  sans-serif;
+  --nav-font: "Marcellus",  sans-serif;
+}
+
+/* TEMA DARK */
+ :root[data-theme='dark'] {
+  --texto-color: #f8faf9;  /*cor principal Textos4*/
+  background-color: #1a2a22; 
+  /* bg = background == cor do Fundo */
+  --secondary-bg-color: #2d6439;  
+  --primary-border-color: #ffffff;
+  --secondary-border-color: #0e0000;
+  --title-color: #F0F0F0;
+  --link-color: #6abb5a;
+  --link-hover: #f8fbca;;
+  --icon-color: #C7C8C9;
+}
+/* TEMA LIGHT */
+:root[data-theme='light'] {
+  --primary-color: #04291b; /* cor principal textos */
+  background-color: #ffffffe7;
+  --texto-color: #111311;
+  --primary-bg-color: #eff7ed;
+  --secondary-bg-color: #dbebd9;
+  --primary-border-color: #609163;
+--secondary-border-color: #ffffff;
+--title-color: #F0F0F0;
+--link-hover: #0b5020;
+--link-color: #3e5239;
+--icon-color: #010716;
+
+}
+
+
+
+
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+  
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--texto-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+color: var(--primary-bg-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-bg-color);
+  font-family: var(--texto-color);
+  
+}
+.dignevirtue h1 {
+  text-align: center;
+  color: var(--background-color);
+}
+
+.dignevirtue p {
+  font-size: 20px;
+  width: 70rem;
+  text-align: center;
+  margin-left: 100px;
+  padding-bottom: 10rem;
+  padding-top: 5rem;
+  color: var(--texto-color);
+}
+
+/* Media Queries para tornar a seção responsiva */
+
+@media (max-width: 1024px) {
+  /* Para telas menores que 1024px (tablets) */
+  .dignevirtue p {
+    width: 90%; /* Ajuste a largura para usar mais espaço disponível */
+    margin-left: auto; /* Centraliza o parágrafo */
+    margin-right: auto; /* Centraliza o parágrafo */
+    padding-top: 4rem; /* Menos espaçamento no topo */
+    padding-bottom: 6rem; /* Menos espaçamento no rodapé */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Para telas menores que 768px (smartphones em modo paisagem e pequenos) */
+  .dignevirtue p {
+    width: 90%; /* Largura otimizada */
+    font-size: 18px; /* Reduz o tamanho da fonte para melhor leitura */
+    padding-top: 3rem; /* Ajuste no espaçamento do topo */
+    padding-bottom: 4rem; /* Ajuste no espaçamento inferior */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Para telas menores que 480px (smartphones em modo retrato) */
+  .dignevirtue p {
+    width: 90%; /* Largura otimizada */
+    font-size: 16px; /* Tamanho de fonte ainda menor para caber em telas pequenas */
+    padding-top: 2rem; /* Menos espaçamento no topo */
+    padding-bottom: 3rem; /* Menos espaçamento no rodapé */
+  }
+}
+
+
+
+html[data-theme='light'] .logo {
+  filter: invert(1);
+}
+
+span{
+  color: var(--primary-bg-color);
+}
+.educacao img {
+  max-width: 100%; /* Garante que a imagem seja responsiva */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-right: 20px; /* Espaço entre a imagem e o texto no desktop */
+  max-width: 25rem; /* Limita a largura da imagem no desktop */
+}
+
+.tema {
+  color: var(--link-color);
+}
+
+.educacao .texto {
+  font-size: 1rem;
+  max-width: 100%;
+}
+
+@media (min-width: 769px) {
+  .educacao {
+    display: flex;
+    flex-direction: row; /* Mantém imagem e texto lado a lado no desktop */
+  }
+
+  .educacao img {
+    margin-right: 200px; /* Espaço entre a imagem e o texto no desktop */
+  }
+
+  .educacao .texto {
+    max-width: 30rem; /* Limita a largura do texto no desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  .educacao {
+    display: flex;
+    flex-direction: column; /* Empilha imagem e texto em telas menores */
+    align-items: center; /* Centraliza os elementos no eixo transversal */
+    text-align: center; /* Centraliza o texto */
+    gap: 15px; /* Espaço entre a imagem e o texto */
+  }
+
+  .educacao img {
+    max-width: 100%; /* Garante que a imagem seja responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 0 auto 15px auto; /* Centraliza a imagem e adiciona espaço abaixo */
+  }
+
+  .educacao .texto {
+    max-width: 90%; /* Ajusta a largura do texto em telas menores */
+  }
+
+  .educacao .texto p {
+    font-size: 15px; /* Ajusta o tamanho do texto em telas menores */
+    padding: 0; /* Remove padding lateral */
+    margin: 0; /* Remove margens desnecessárias */
+  }
+}
+
+/* Seção Fome */
+.fome {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  flex-wrap: nowrap; /* Mantém a imagem e o texto lado a lado no desktop */
+}
+
+.fome img {
+  width: 40%; /* Largura da imagem no desktop */
+  max-width: 100%; /* Responsivo: imagem não ultrapassa o container */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-right: 15rem; /* Espaço entre imagem e texto */
+
+}
+
+.texto-container {
+  max-width: 60%; /* Limita a largura do bloco de texto */
+}
+
+.texto-container h1 {
+padding-right: 10px;
+  color: #f8fbca;
+  font-size: 2rem;
+  margin-bottom: 10px; /* Espaço entre o título e o parágrafo */
+}
+
+.texto-container p {
+  font-size: 1rem; /* Tamanho do texto no desktop */
+  max-width: 100%;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .fome {
+    flex-direction: column; /* Empilha imagem, título e texto em telas menores */
+    text-align: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza os elementos */
+  }
+
+  .fome img {
+    width: 70%; /* Aumenta a largura da imagem em telas menores */
+    margin-right: 0; /* Remove o espaçamento lateral */
+    margin-bottom: 20px; /* Espaço entre imagem e texto em telas menores */
+  }
+
+  .texto-container {
+    max-width: 100%; /* Permite que o texto ocupe toda a largura */
+  }
+
+  .texto-container h1 {
+    font-size: 1.5rem; /* Ajusta o tamanho do título em telas menores */
+    text-align: center; /* Centraliza o título */
+  }
+
+  .texto-container p {
+    font-size: 0.9rem; /* Ajusta o tamanho do texto em telas menores */
+  }
+}
+/* Estilo padrão */
+.about-3 .mb-4 {
+  color: var();
+  font-size: 20px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .about-3 .mb-4 {
+    font-size: 15px; /* Reduz o tamanho da fonte em tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-3 .mb-4 {
+    font-size: 16px; /* Reduz ainda mais o tamanho da fonte em smartphones */
+  }
+}
+
+
+
+/* Pulsating Play Button
+------------------------------*/
+.pulsating-play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.pulsating-play-btn:before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  animation-delay: 0s;
+  animation: pulsate-play-btn 2s;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+
+  top: -15%;
+  left: -15%;
+  background: rgba(255, 255, 255, 0);
+}
+
+.pulsating-play-btn:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.pulsating-play-btn:hover:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  animation: none;
+  border-radius: 0;
+}
+
+.pulsating-play-btn:hover:after {
+  border-left: 15px solid var(--accent-color);
+  transform: scale(20);
+}
+
+@keyframes pulsate-play-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 20px 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 60px;
+  margin-right: 8px;
+}
+
+
+.scrolled .header {
+  box-shadow: 0px 0 18px color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    padding: 18px 15px;
+    font-size: 16px;
+    font-family: var(--nav-font);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+ color: var(--link-hover);
+  }
+}
+  
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color:var(--background-color);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    
+  }
+
+  
+
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
+  }
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Footer */
+.footer {
+  color: white;
+  background-color: black;
+  font-size: 14px;
+  position: relative;
+}
+
+.footer .footer-top {
+  background-color: color-mix(in srgb, var(--background-color), white 5%);
+  padding-top: 50px;
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo1 span{
+  color: #6abb5a;
+  font-family: var(--heading-font);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.footer h4::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #6abb5a;
+  bottom: 0;
+  left: 0;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: color-mix(in srgb, white , transparent 30%);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color:#6abb5a;
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+.footer .copyright {
+  padding: 30px 0;
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  
+  color: black;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 4px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: black;
+  background: white;
+  text-decoration: none;
+}
+
+
+
+@media (min-width: 992px) {
+  .footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .footer .social-links {
+    order: 1;
+  }
+  
+}
+
+/*--------------------------------------------------------------
+# Preloader--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: var(--link-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+  box-shadow: 0 4px 6px rgba(0, 59, 29, 0.988);
+  
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10rem ;
+  text-align: center;
+  position: relative;
+}
+
+.missão {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.missão h1 {
+  margin-bottom: 20px;
+  color: var(--background-color);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--primary-border-color); 
+  width: 20rem; 
+  height: 20rem; 
+  justify-content: center; 
+  border-radius: 10px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease;
+  padding: 10px; 
+}
+
+/* Efeito de hover para os quadrados */
+.icon-item:hover {
+  transform: scale(1.05); 
+}
+
+/* Estilo dos ícones */
+.icon-item i {
+  font-size: 3rem; 
+  margin-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #0B0B0F;
+}
+
+/* Efeito de hover para os ícones */
+.icon-item i:hover {
+  color: var(--secondary-border-color); 
+  transform: scale(1.2); 
+}
+
+/* Estilo dos itens de lista */
+.icon-item li {
+  margin: 0;
+  list-style-type: none;
+  font-size: 1.5rem; 
+  transition: color 0.3s ease;
+  color: black;
+}
+
+/* Efeito de hover para os itens de lista */
+.icon-item li:hover {
+ color: var(--secondary-border-color);
+}
+
+/* Media Queries para tornar a seção responsiva */
+
+@media (max-width: 1024px) {
+  /* Para tablets */
+  .icon-item {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .icon-item i {
+    font-size: 2.5rem; /* Reduz o tamanho dos ícones */
+  }
+
+  .icon-item li {
+    font-size: 1.3rem; /* Reduz o tamanho do texto */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Para smartphones */
+  .icon-container {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center;
+  }
+
+  .icon-item {
+    width: 90%;
+    height: auto; /* Altura ajustável */
+    padding: 20px; /* Mais espaço interno para dispositivos menores */
+  }
+
+  .icon-item i {
+    font-size: 2rem; /* Reduz ainda mais o tamanho do ícone */
+  }
+
+  .icon-item li {
+    font-size: 1.2rem; /* Tamanho do texto reduzido */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Para smartphones pequenos */
+  .icon-item {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .icon-item i {
+    font-size: 1.8rem; /* Reduz ainda mais o tamanho do ícone */
+  }
+
+  .icon-item li {
+    font-size: 1rem; /* Tamanho do texto para smartphones pequenos */
+  }
+}
+
+
+.page-title:before {
+  content: "";
+  
+  
+  inset: 0;
+}
+
+.page-title h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+color: #000000;
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 100px;
+  overflow: clip;
+}
+
+/* Estilo para o título h1 */
+section,
+.section h1 {
+  color: var(--link-color);
+  text-align: center; /* Centraliza o título no desktop */
+}
+
+/* Estilo para os parágrafos */
+section,
+.section p {
+  color: var(--texto-color);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1199px) {
+  section,
+  .section {
+    scroll-margin-top: 66px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 28px; /* Mantém o tamanho no desktop */
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  font-family: var(--heading-font);
+  font-size: 20px; /* Mantém o tamanho no desktop */
+  color: var(--texto-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 22px; /* Reduz o tamanho do título em telas menores */
+  }
+
+  .section-title p {
+    font-size: 16px; /* Reduz o tamanho do texto em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title h2 {
+    font-size: 20px; /* Ajuste adicional para telas muito pequenas */
+  }
+
+  .section-title p {
+    font-size: 14px; /* Ajuste adicional para o texto */
+  }
+}
+
+/* Estilos gerais */
+#grafico-section {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: #bada55;
+  text-align: center;
+}
+
+#texto-explicativo {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #e7e9dd;
+  padding: 0 15%;
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Título e descrição no desktop */
+.graph-section h2 {
+  color: var(--link-color);
+  padding-left: 0; /* Remove o espaçamento à esquerda */
+  text-align: center; /* Centraliza o título */
+  font-size: 2rem; /* Certifique-se de que está proporcional */
+}
+
+.graph-section p {
+  color: var(--texto-color);
+  font-size: 1.2rem; /* Proporcional para desktop */
+  margin: 1rem 0;
+  text-align: center; /* Centraliza o parágrafo */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .graph-section h2 {
+    font-size: 1.8rem; /* Reduz o tamanho da fonte para telas menores */
+  }
+
+  .graph-section p {
+    font-size: 14px; /* Reduz o tamanho do texto */
+    padding: 0 1rem; /* Adiciona espaço interno nas laterais */
+    text-align: justify; /* Mantém o alinhamento legível */
+  }
+}
+
+#grafico-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os elementos se ajustem em telas pequenas */
+  align-items: center;
+  justify-content: center; /* Centraliza os elementos no container */
+  gap: 30px;
+  margin-top: 20px;
+}
+
+#imagem-container {
+  width: 30%;
+}
+
+#imagem-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Gráfico com barras horizontais */
+#grafico {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente as barras no container */
+}
+
+.grafico-barra {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 15px;
+  background-color: #e7e9dd;
+  border-radius: 15px;
+}
+
+.barra {
+  width: 0%;
+  background-color: var(--link-color);
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  transition: width 1s ease-out;
+}
+
+.area-texto {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--texto-color);
+  font-weight: bold;
+}
+
+.porcentagem {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #010e02;
+  font-weight: bold;
+}
+
+#porcentagens {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.porcentagem p {
+  font-size: 1.1rem;
+  color: #474b34;
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  #grafico-container {
+    flex-direction: column;
+    align-items: center; /* Garante a centralização em telas pequenas */
+  }
+
+  #imagem-container {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  #grafico {
+    width: 80%;
+  }
+
+  #texto-explicativo {
+    font-size: 1rem;
+    padding: 0 10%;
+  }
+
+  .porcentagem p {
+    font-size: 1rem;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  padding: 0;
+}
+
+.hero .carousel {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero .carousel-item {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero .carousel-item:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 60%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero .carousel-container {
+  position: absolute;
+  inset: 90px 64px 64px 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 3;
+
+}
+.hero .carousel-container p{
+font-size: 23px;
+}
+.hero h2 {
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 700;
+  animation: fadeInDown 1s both;
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 30px;
+  }
+}
+
+.hero p {
+  animation: fadeInDown 1s both 0.2s;
+}
+
+@media (min-width: 1024px) {
+
+  .hero h2,
+  .hero p {
+    max-width: 60%;
+  }
+}
+
+.hero .btn-get-started {
+  color: var(--texto-color);
+  background: var(--accent-color);
+  font-family: var(--texto-color);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  animation: fadeInUp 1s both 0.4s;
+}
+
+.hero .btn-get-started:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.hero .carousel-control-prev,
+.hero .carousel-control-next {
+  width: 10%;
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.hero .carousel-control-prev:focus,
+.hero .carousel-control-next:focus {
+  opacity: 0.5;
+}
+
+.hero .carousel-control-prev:hover,
+.hero .carousel-control-next:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 1024px) {
+
+  .hero .carousel-control-prev,
+  .hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+.hero .carousel-control-next-icon,
+.hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.hero .carousel-indicators {
+  list-style: none;
+}
+
+.hero .carousel-indicators li {
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services .section-title h1 {
+ color:var(--link-color);
+  font-size: 30px;
+  font-weight: 20px;
+}
+.services .section-title .serviços{
+  color: #f8faba;
+padding-right: 90px;
+}
+
+.services .content .service-item {
+  background-color: var(--surface-color);
+  padding: 20px 30px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  position: relative;
+}
+
+.services .content .service-item .number {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.services .content .service-item .service-item-icon {
+  position: relative;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.services .content .service-item .service-item-icon img {
+  width: 50px;
+}
+
+.services .content .service-item .service-item-icon:before {
+  position: absolute;
+  content: "";
+  transform: rotate(45deg);
+  z-index: -1;
+  left: -20px;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-right: 40px solid var(--accent-color);
+  display: none;
+}
+
+.services .content .service-item .service-item-icon>span {
+  color: var(--default-color);
+  font-size: 4rem;
+}
+
+.services .content .service-item .service-item-content .service-heading {
+  font-size: 20px;
+  color: var(--default-color);
+  font-weight: 400;
+}
+
+.services .content .service-item .service-item-content p {
+  font-size: 15px;
+}
+
+@media (min-width: 769px) {
+  .services .content [class^=col-]:nth-child(4n+4) .service-item {
+    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  }
+
+  .services .content [class^=col-]:nth-last-child(-n+4) .service-item {
+    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  }
+}
+
+@media (max-width: 768px) {
+  .services .content [class^=col-]:nth-child(2n+2) .service-item {
+    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  }
+
+  .services .content [class^=col-]:last-child .service-item,
+  .services .content [class^=col-]:nth-last-child(2) .service-item {
+    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  }
+}
+
+@media (max-width: 576px) {
+  .services .content [class^=col-] .service-item {
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    margin-bottom: 10px;
+  }
+}
+
+/*--------------------------------------------------------------
+# About Section
+/* Estilos principais para a seção */
+.about-3 .section {
+  padding: 7rem 0;
+}
+
+.about-3 .content-title {
+  color: var(--link-color);
+  margin-bottom: 30px;
+font-size: 20px;
+  text-align: left;
+}
+.about-3 h1{
+  font-size: 20rem;
+}
+.about-3 p {
+  color: var(--texto-color);
+}
+
+/* Tornar a imagem responsiva */
+.about-3 .img-about3 {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* Tamanho máximo da imagem para desktops */
+  display: block;
+  margin: 0 auto; /* Centraliza a imagem */
+}
+
+/* Centralização do botão de play sobre a imagem */
+.about-3 .pulsating-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.about-3 .pulsating-play-btn .play {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.about-3 .pulsating-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .about-3 .content-title {
+    font-size: 1rem;
+  }
+
+  .about-3 .btn-cta {
+    padding: 15px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-3 .section {
+    padding: 5rem 2rem;
+  }
+
+  .about-3 .content-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .about-3 p {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .about-3 .img-about3 {
+    width: 90%; /* Ajusta a largura da imagem no mobile */
+    max-width: none; /* Remove limite máximo da imagem */
+  }
+
+  .about-3 .pulsating-play-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .about-3 .pulsating-play-btn .play {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-3 .section {
+    padding: 4rem 1rem;
+  }
+
+  .about-3 .content-title {
+    font-size: 1.2rem;
+  }
+
+  .about-3 p {
+    font-size: 14px;
+  }
+
+  .about-3 .img-about3 {
+    width: 100%; /* Imagem ocupa 100% da largura no mobile */
+  }
+
+  .about-3 .pulsating-play-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .about-3 .pulsating-play-btn .play {
+    font-size: 1.5rem;
+  }
+}
+
+/* Estilos para o botão de play */
+.about-3 .pulsating-play-btn {
+  position: absolute;
+  left: calc(60% - 47px);
+  top: calc(60% - 47px);
+}/* Container de imagem e texto */
+.about-img-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Reduzido o espaço entre a imagem e o texto */
+  justify-content: space-between; /* Garante que a imagem e o texto fiquem bem distribuídos */
+}
+
+.about-img-container .about-img {
+  max-width: 30%; /* Reduz a largura da imagem no desktop */
+  height: auto;
+  object-fit: cover; /* Faz a imagem se ajustar sem distorcer */
+}
+
+.about-img-container p {
+  max-width: 45%; /* Limita o texto a 45% do container no desktop */
+  font-size: 20px;
+  color: var(--texto-color);
+  line-height: 1.6;
+  padding-right: 10%;
+}
+
+/* Ajustes responsivos para telas menores */
+@media (max-width: 1024px) {
+  .about-img-container {
+    gap: 1.5rem; /* Diminui ainda mais o espaço entre a imagem e o texto */
+  }
+
+  .about-img-container .about-img {
+    max-width: 60%; /* Aumenta a largura da imagem para 60% em telas menores */
+  }
+
+  .about-img-container p {
+    font-size: 18px;
+    max-width: 55%; /* Permite que o texto ocupe mais espaço */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-img-container {
+    flex-direction: column; /* Empilha a imagem e o texto no mobile */
+    text-align: center;
+    gap: 1rem; /* Espaço reduzido entre imagem e texto */
+  }
+
+  .about-img-container .about-img {
+    width: 80%; /* Reduz a largura da imagem no mobile */
+    margin: 0 auto; /* Centraliza a imagem */
+  }
+
+  .about-img-container p {
+    max-width: 90%; /* Aumenta a largura do texto */
+    font-size: 16px; /* Ajusta o tamanho do texto */
+    margin: 0 auto; /* Centraliza o texto */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-img-container .about-img {
+    width: 100%; /* Imagem ocupa toda a largura em telas muito pequenas */
+  }
+
+  .about-img-container p {
+    font-size: 14px; /* Texto menor para telas pequenas */
+    padding-left: 10px;
+  }
+}
+
+
+/* Container principal */
+.dignevirtue-areas {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f4f4f4;
+  margin-top: 10rem;
+}.areas-about h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10rem;
+  color: var(--link-color);
+}
+
+.areas-about p {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+  color: var(--texto-color);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .areas-about h1 {
+    font-size: 24px; /* Reduz o tamanho da fonte para telas menores */
+    margin-top: 5rem; /* Ajusta o espaçamento superior */
+  }
+
+  .areas-about p {
+    font-size: 16px; /* Reduz o tamanho da fonte para uma leitura confortável no mobile */
+    margin-top: 20px; /* Reduz o espaçamento superior */
+    padding: 0 1rem; /* Adiciona padding lateral para melhor espaçamento em telas pequenas */
+  }
+}
+
+@media (max-width: 480px) {
+  .areas-about h1 {
+    font-size: 20px; /* Reduz ainda mais o título em telas muito pequenas */
+    margin-top: 3rem; /* Diminui o espaçamento superior */
+  }
+
+  .areas-about p {
+    font-size: 14px; /* Texto mais compacto para telas pequenas */
+    margin-top: 15px;
+  }
+}
+
+
+/* Cada área */
+.area {
+  text-align: center;
+  width: 200px;
+  padding: 10px;
+}
+
+.area i {
+  font-size: 40px;
+  color: #4b7c57; /* Cor do ícone */
+  margin-bottom: 10px;
+}
+
+.area h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: var(--link-color);
+}
+
+.area p {
+  font-size: 14px;
+  color: #555;
+}
+
+
+/* Seção Saúde */
+.saude {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  flex-wrap: nowrap; /* Mantém o layout lado a lado no desktop */
+}
+
+.texto-container {
+  max-width: 60%; /* Limita a largura do bloco de texto */
+}
+
+.texto-container h1 {
+  padding-left: 25px;
+  color: #f8fbca;
+  font-size: 2rem;
+  margin-bottom: 10px; /* Espaço entre o título e o parágrafo */
+}
+
+.texto-container p {
+  font-size: 20px; /* Tamanho do texto no desktop */
+  max-width: 100%;
+}
+.saude {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.saude img {
+  width: 40%; /* Largura da imagem no desktop */
+  max-width: 100%; /* Responsivo: imagem não ultrapassa o container */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-left: 15rem; /* Espaço entre o texto e a imagem */
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .saude {
+    flex-direction: column-reverse; /* Coloca a imagem acima do título e texto */
+    text-align: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza os elementos */
+  }
+
+  .texto-container {
+    max-width: 100%; /* Permite que o texto ocupe toda a largura */
+  }
+
+  .saude img {
+    width: 70%; /* Aumenta a largura da imagem em telas menores */
+    margin-left: 0; /* Remove o espaçamento lateral */
+    margin-bottom: 20px; /* Espaço entre imagem e texto em telas menores */
+  }
+
+  .texto-container h1 {
+    font-size: 1.5rem; /* Ajusta o tamanho do título em telas menores */
+    text-align: center; /* Centraliza o título */
+  }
+
+  .texto-container p {
+    font-size: 15px; /* Ajusta o tamanho do texto em telas menores */
+  }
+}
+
+
+/* onde a saude atua*/
+.atua-saude {
+  float: left;
+  width: 30rem;
+  height: 30rem;
+  
+}
+.atua-saude h2{
+  padding-top: 1.5px;
+}
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+/* Estilos gerais */
+.team .person {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinha o conteúdo ao centro */
+  justify-content: center;
+}
+
+.team .person figure {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.team .person img {
+  transition: 0.3s all ease;
+  max-width: 100%; /* Garante que a imagem se ajuste ao tamanho do container */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+.team .section-title h2 {
+  color: var(--link-color);
+}
+
+.team .content {
+  display: flex;
+  justify-content: center;
+  padding-left: 20rem; /* Ajuste a distância no desktop */
+  flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+}
+
+.team .person .person-contents {
+  text-align: center;
+  padding-top: 10px; /* Dá um espaço entre a imagem e o texto */
+}
+
+/* /nomes da equipe/ */
+.team .person .person-contents h3 {
+  color: var(--texto-color);
+  font-size: 25px;
+}
+
+/*nomes do cargo */
+.team .person .person-contents .position {
+  color: var(--texto-color);
+}
+
+/* icones das redes sociais */
+.team .person .social {
+  
+  color: #1a2a22;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 0;
+}
+.team .person .social a {
+  display: block;
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  background: #232e0a;
+  position: relative;
+}
+
+.team .person .social a>span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:var(--link-hover);
+}
+
+.team .person .social a:hover {
+  background: var(--background-color);
+  
+}
+
+.team .person .social a span:hover {
+ color: var(--nav-font);
+}
+
+
+/* Cards de serviços */
+.service-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #fff; /* Fundo branco para os cards */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombras para destacar o card */
+  transition: transform 0.3s ease;
+  margin-bottom: 30px; /* Espaço entre os cards */
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.image-container {
+  width: 45%;
+  height: auto;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.text-container {
+  width: 50%;
+  text-align: left;
+}
+
+.text-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.text-container p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  /* Centraliza a seção de equipe */
+  .team .content {
+    padding-left: 0; /* Remove o padding no mobile */
+    justify-content: center; /* Centraliza os elementos */
+    flex-wrap: wrap; /* Permite que os itens fiquem em blocos */
+  }
+
+  .team .person {
+    width: 90%; /* Cada pessoa ocupa 90% da largura */
+    margin: 10px auto; /* Centraliza os itens */
+  }
+
+  .team .person img {
+    max-width: 100%; /* Ajusta a largura da imagem */
+    margin: 0 auto;
+  }
+
+  .team .person .person-contents {
+    text-align: center; /* Centraliza o texto */
+  }
+
+  /* Cards de serviços */
+.service-card {
+  display: flex;
+  flex-direction: column; /* Empilha imagem e texto verticalmente */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  justify-content: center; /* Centraliza verticalmente no espaço disponível */
+  width: 90%; /* Ocupa 90% da largura no desktop */
+  margin: 10px auto; /* Centraliza os cards no container */
+}
+
+/* Ajuste para desktop */
+@media (min-width: 769px) {
+  .service-cards {
+    display: flex;
+    justify-content: center; /* Centraliza os cards no container */
+    gap: 20px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite múltiplas linhas, se necessário */
+  }
+
+  .service-card {
+    flex-direction: column; /* Mantém a estrutura dos cards */
+    align-items: center; /* Garante alinhamento central no desktop */
+    width: 30%; /* Define a largura dos cards para ocupar espaço proporcional */
+  }
+}
+
+/* Responsividade para tablets e dispositivos menores */
+@media (max-width: 768px) {
+  .service-card {
+    width: 90%; /* Cada card ocupa 90% da largura */
+    margin: 10px auto; /* Centraliza os cards no container */
+  }
+
+  .image-container,
+  .text-container {
+    width: 100%; /* Cada item ocupa a largura total */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .text-container h2 {
+    font-size: 1.3rem; /* Ajusta o tamanho do título */
+  }
+
+  .text-container p {
+    font-size: 1rem; /* Ajusta o tamanho do texto */
+  }
+}
+
+/* Responsividade para telas muito pequenas (mobile) */
+@media (max-width: 480px) {
+  .service-card {
+    width: 100%; /* Cada card ocupa a largura total */
+    margin: 10px auto;
+  }
+
+  .text-container h2 {
+    font-size: 1.1rem; /* Ajusta o tamanho do título */
+  }
+
+  .text-container p {
+    font-size: 0.9rem; /* Ajusta o tamanho do texto */
+  }
+}
+}
