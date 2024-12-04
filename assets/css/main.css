@@ -73,6 +73,10 @@ h6 {
   font-family: var(--texto-color);
   
 }
+.dignevirtue {
+  text-align: center;
+}
+
 .dignevirtue h1 {
   text-align: center;
   color: var(--background-color);
@@ -82,7 +86,7 @@ h6 {
   font-size: 20px;
   width: 70rem;
   text-align: center;
-  margin-left: 100px;
+  margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
   padding-bottom: 10rem;
   padding-top: 5rem;
   color: var(--texto-color);
@@ -94,8 +98,8 @@ h6 {
   /* Para telas menores que 1024px (tablets) */
   .dignevirtue p {
     width: 90%; /* Ajuste a largura para usar mais espaço disponível */
-    margin-left: auto; /* Centraliza o parágrafo */
-    margin-right: auto; /* Centraliza o parágrafo */
+    font-size: 18px; /* Reduz o tamanho da fonte */
+    margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
     padding-top: 4rem; /* Menos espaçamento no topo */
     padding-bottom: 6rem; /* Menos espaçamento no rodapé */
   }
@@ -106,6 +110,7 @@ h6 {
   .dignevirtue p {
     width: 90%; /* Largura otimizada */
     font-size: 18px; /* Reduz o tamanho da fonte para melhor leitura */
+    margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
     padding-top: 3rem; /* Ajuste no espaçamento do topo */
     padding-bottom: 4rem; /* Ajuste no espaçamento inferior */
   }
@@ -116,11 +121,11 @@ h6 {
   .dignevirtue p {
     width: 90%; /* Largura otimizada */
     font-size: 16px; /* Tamanho de fonte ainda menor para caber em telas pequenas */
+    margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
     padding-top: 2rem; /* Menos espaçamento no topo */
     padding-bottom: 3rem; /* Menos espaçamento no rodapé */
   }
 }
-
 
 
 html[data-theme='light'] .logo {
